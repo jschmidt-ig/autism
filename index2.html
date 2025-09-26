@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ISI Website SPA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .page { display: none; }
+    .page.active { display: block; }
+  </style>
+</head>
+<body class="font-sans text-gray-800">
+
+<!-- Navigation -->
+<nav class="bg-gray-900 text-white p-4 flex flex-wrap gap-2">
+  <button onclick="showPage('home')" class="px-3 py-2 rounded bg-purple-700">Homepage</button>
+  <button onclick="showPage('problem')" class="px-3 py-2 rounded hover:bg-gray-700">The Problem</button>
+  <button onclick="showPage('oria')" class="px-3 py-2 rounded hover:bg-gray-700">Our Solution: Oria</button>
+  <button onclick="showPage('myemr')" class="px-3 py-2 rounded hover:bg-gray-700">MyEMR Platform</button>
+  <button onclick="showPage('impact')" class="px-3 py-2 rounded hover:bg-gray-700">Impact & Growth</button>
+  <button onclick="showPage('nonprofits')" class="px-3 py-2 rounded hover:bg-gray-700">For Nonprofits</button>
+  <button onclick="showPage('investors')" class="px-3 py-2 rounded hover:bg-gray-700">For Investors</button>
+  <button onclick="showPage('getinvolved')" class="px-3 py-2 rounded hover:bg-gray-700">Get Involved</button>
+</nav>
+
+<!-- Pages -->
+<main class="p-6 md:p-12 space-y-10">
+
+  <!-- Home -->
+  <section id="home" class="page active">
+    <h2 class="text-2xl font-bold mb-4">Homepage</h2>
+    <h1 class="text-4xl font-bold mb-4">Unified Care. Smarter Tools. Better Lives.</h1>
+    <p class="mb-4">
+      Innovative Solutions Initiative (ISI) is developing Oria, a patent-pending AI-powered platform that unifies
+      healthcare, education, and social services. By creating intelligent, secure, and connected tools, we empower
+      families, individuals, and professionals with real-time insights, collaborative workflows, and personalized
+      pathways for care.
+    </p>
+    <p class="mb-4">
+      Our vision is to create a world where every individual — regardless of ability, age, or background — has access to
+      compassionate, connected, and intelligent care that bridges the gaps between providers, families, and institutions.
+    </p>
+    <div class="space-x-4">
+      <button class="bg-purple-700 text-white px-4 py-2 rounded">Donate</button>
+      <button class="bg-pink-600 text-white px-4 py-2 rounded">Invest</button>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section id="problem" class="page">
+    <h2 class="text-2xl font-bold mb-4">The Problem</h2>
+    <p class="mb-4">
+      Care is fragmented across today’s healthcare, education, and social service systems. Data lives in silos. Families
+      and providers often face broken transitions, overwhelming manual processes, and duplication of work. This fragmentation leads to:
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-1">
+      <li>Loss of productivity for professionals managing records and workflows</li>
+      <li>Lack of ownership and access to personal health and care data</li>
+      <li>Errors and delays during care transitions</li>
+      <li>Stress and confusion for families navigating complex systems</li>
+    </ul>
+    <p>The outcome is lost time, poorer health outcomes, and a system that is too complex for the people it is meant to serve.</p>
+  </section>
+
+  <!-- Oria -->
+  <section id="oria" class="page">
+    <h2 class="text-2xl font-bold mb-4">Our Solution: Oria</h2>
+    <p class="mb-6">
+      Oria is our AI model trained to process complex health and educational documents and provide actionable insights.
+      She integrates data from multiple sources — including Individualized Education Plans (IEPs), therapy notes, medical
+      records, behavior response data, and academic assessments — to provide clear summaries and recommendations.
+    </p>
+
+    <!-- Oria Flow Diagram (SVG) -->
+    <div class="bg-white rounded-lg shadow p-6 mb-8">
+      <h3 class="text-lg font-semibold mb-4">How Oria Works</h3>
+      <div class="overflow-x-auto">
+        <svg role="img" aria-label="Oria data flow diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" class="w-full h-auto">
+          <rect x="20" y="30" width="220" height="70" rx="10" fill="#F3E8FF" stroke="#7C3AED"/>
+          <text x="130" y="72" text-anchor="middle" font-size="14" fill="#1F2937">IEPs &amp; Therapy Notes</text>
+
+          <rect x="20" y="150" width="220" height="70" rx="10" fill="#E0E7FF" stroke="#4338CA"/>
+          <text x="130" y="192" text-anchor="middle" font-size="14" fill="#1F2937">Medical Records &amp; EHR</text>
+
+          <polygon points="260,65 310,65 310,55 360,80 310,105 310,95 260,95" fill="#7C3AED"/>
+          <polygon points="260,185 310,185 310,175 360,200 310,225 310,215 260,215" fill="#4338CA"/>
+
+          <rect x="370" y="60" width="240" height="120" rx="12" fill="#FDF2F8" stroke="#DB2777"/>
+          <text x="490" y="115" text-anchor="middle" font-size="16" fill="#1F2937">ORIA Inference</text>
+          <text x="490" y="140" text-anchor="middle" font-size="12" fill="#6B7280">Parse • Normalize • Reason</text>
+
+          <polygon points="620,115 670,115 670,105 720,130 670,155 670,145 620,145" fill="#DB2777"/>
+
+          <rect x="730" y="30" width="220" height="70" rx="10" fill="#ECFDF5" stroke="#10B981"/>
+          <text x="840" y="72" text-anchor="middle" font-size="14" fill="#1F2937">Summaries</text>
+
+          <rect x="730" y="150" width="220" height="70" rx="10" fill="#ECFEFF" stroke="#06B6D4"/>
+          <text x="840" y="192" text-anchor="middle" font-size="14" fill="#1F2937">Care Recommendations</text>
+
+          <polygon points="960,65 1010,65 1010,55 1060,80 1010,105 1010,95 960,95" fill="#10B981"/>
+          <polygon points="960,185 1010,185 1010,175 1060,200 1010,225 1010,215 960,215" fill="#06B6D4"/>
+
+          <rect x="1070" y="90" width="110" height="70" rx="10" fill="#FFF7ED" stroke="#F59E0B"/>
+          <text x="1125" y="131" text-anchor="middle" font-size="12" fill="#1F2937">Provider &amp; Family</text>
+        </svg>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-2">What Oria Produces</h3>
+    <ul class="list-disc pl-6 mb-6 space-y-1">
+      <li>Concise document summaries and clear care recommendations</li>
+      <li>Behavior and health anomaly detection to catch issues early</li>
+      <li>Personalized care plan suggestions tailored to individual needs</li>
+      <li>Automated client intake assessments to streamline onboarding</li>
+    </ul>
+
+    <h3 class="text-xl font-semibold mt-4 mb-2">Value for Providers</h3>
+    <ul class="list-disc pl-6 space-y-1">
+      <li>Faster onboarding of new patients and clients</li>
+      <li>Reduced documentation errors through automation</li>
+      <li>Real-time decision support at the point of care</li>
+    </ul>
+  </section>
+
+  <!-- MyEMR -->
+  <section id="myemr" class="page">
+    <h2 class="text-2xl font-bold mb-4">MyEMR Platform</h2>
+    <p class="mb-4">
+      MyEMR is our patient-facing system designed to give individuals ownership of their care journey. It is fully HIPAA,
+      FERPA, and GDPR compliant and ensures that data is secure, accessible, and shareable with the right people at the right time.
+    </p>
+    <h3 class="text-xl font-semibold mb-2">Core Features</h3>
+    <ul class="list-disc pl-6 mb-4 space-y-1">
+      <li>Role-based permissions for providers, families, and educators</li>
+      <li>Consent-based data sharing and emergency access protocols</li>
+      <li>Integration with EHRs and school systems for seamless workflows</li>
+    </ul>
+    <h3 class="text-xl font-semibold mb-2">Interoperability Protocols</h3>
+    <ul class="list-disc pl-6 space-y-1">
+      <li>FHIR API (Epic) for secure, real-time data exchange</li>
+      <li>OAuth 2.0 for secure patient authentication</li>
+      <li>Bulk Data Support for scalable access to large records</li>
+      <li>CDS Hooks to integrate clinical decision support tools</li>
+    </ul>
+  </section>
+
+  <!-- Impact -->
+  <section id="impact" class="page">
+    <h2 class="text-2xl font-bold mb-4">Impact &amp; Growth</h2>
+    <p class="mb-6">
+      The impact of ISI goes beyond convenience. By intelligently connecting care systems, we unlock efficiency, equity, and better outcomes.
+    </p>
+
+    <!-- Impact Icons Row -->
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-white rounded-lg shadow p-6 text-center">
+        <div class="text-4xl mb-3">🧪</div>
+        <h4 class="font-semibold mb-2">Accelerate Trials</h4>
+        <p class="text-sm text-gray-600">Faster patient-study matching improves efficiency and diversity.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow p-6 text-center">
+        <div class="text-4xl mb-3">💸</div>
+        <h4 class="font-semibold mb-2">Reduce Costs</h4>
+        <p class="text-sm text-gray-600">Automated outcomes tracking enables data-driven funding.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow p-6 text-center">
+        <div class="text-4xl mb-3">📈</div>
+        <h4 class="font-semibold mb-2">Public Health Readiness</h4>
+        <p class="text-sm text-gray-600">Early trend detection guides interventions and allocation.</p>
+      </div>
+    </div>
+
+    <!-- Growth Line Chart (SVG) -->
+    <div class="bg-white rounded-lg shadow p-6 mb-8">
+      <h3 class="text-lg font-semibold mb-4">Projected Net Income Growth (5 Years)</h3>
+      <div class="overflow-x-auto">
+        <svg role="img" aria-label="Projected net income line chart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" class="w-full h-auto">
+          <defs>
+            <linearGradient id="grad" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#C084FC"/>
+              <stop offset="100%" stop-color="#F9A8D4"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="720" height="260" fill="#F9FAFB"/>
+          <g transform="translate(60,20)">
+            <line x1="0" y1="200" x2="620" y2="200" stroke="#D1D5DB"/>
+            <line x1="0" y1="150" x2="620" y2="150" stroke="#E5E7EB"/>
+            <line x1="0" y1="100" x2="620" y2="100" stroke="#E5E7EB"/>
+            <line x1="0" y1="50" x2="620" y2="50" stroke="#E5E7EB"/>
+            <text x="-10" y="205" text-anchor="end" font-size="10" fill="#6B7280">$0</text>
+            <text x="-10" y="155" text-anchor="end" font-size="10" fill="#6B7280">$2.5M</text>
+            <text x="-10" y="105" text-anchor="end" font-size="10" fill="#6B7280">$5M</text>
+            <text x="-10" y="55" text-anchor="end" font-size="10" fill="#6B7280">$7.5M</text>
+
+            <!-- Line path: from $282k to ~$10M simplified -->
+            <polyline fill="none" stroke="url(#grad)" stroke-width="4" points="0,190 155,170 310,140 465,95 620,40"/>
+            <circle cx="0" cy="190" r="4" fill="#7C3AED"/>
+            <circle cx="620" cy="40" r="4" fill="#DB2777"/>
+
+            <text x="0" y="220" font-size="10" fill="#6B7280">Year 1</text>
+            <text x="155" y="220" font-size="10" fill="#6B7280">Year 2</text>
+            <text x="310" y="220" font-size="10" fill="#6B7280">Year 3</text>
+            <text x="465" y="220" font-size="10" fill="#6B7280">Year 4</text>
+            <text x="620" y="220" font-size="10" fill="#6B7280">Year 5</text>
+          </g>
+        </svg>
+      </div>
+      <p class="text-sm text-gray-600 mt-3">Illustrative curve based on deck figures: ~$282k to nearly $10M.</p>
+    </div>
+  </section>
+
+  <!-- Nonprofits -->
+  <section id="nonprofits" class="page">
+    <h2 class="text-2xl font-bold mb-4">For Nonprofits</h2>
+    <p class="mb-4">
+      Your support is critical in helping us build the infrastructure that empowers families and providers. Donations go directly toward
+      development, compliance, outreach, and pilot programs that demonstrate the real-world value of Oria and MyEMR.
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-1">
+      <li>Funding platform development and HIPAA/FERPA compliance</li>
+      <li>Supporting outreach to schools, clinics, and communities</li>
+      <li>Launching research pilots to refine AI-driven recommendations</li>
+    </ul>
+    <p class="mb-4">Together, we can ensure more equitable, connected, and compassionate care systems for all.</p>
+    <button class="bg-purple-700 text-white px-4 py-2 rounded mt-2">Donate Now</button>
+  </section>
+
+  <!-- Investors -->
+  <section id="investors" class="page">
+    <h2 class="text-2xl font-bold mb-4">For Investors</h2>
+    <p class="mb-6">
+      ISI is at the intersection of healthcare, AI, and interoperability — positioned for rapid adoption and durable profitability.
+    </p>
+
+    <!-- Budget Bars (SVG) -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <h3 class="text-lg font-semibold mb-4">Financial Snapshot</h3>
+      <div class="overflow-x-auto">
+        <svg role="img" aria-label="Budget comparison bars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" class="w-full h-auto">
+          <rect x="0" y="0" width="720" height="220" fill="#F9FAFB"/>
+          <g transform="translate(160,30)">
+            <text x="-140" y="30" font-size="12" fill="#374151">Development Budget</text>
+            <rect x="0" y="15" width="330" height="24" fill="#C7D2FE" stroke="#6366F1"/>
+            <text x="340" y="33" font-size="12" fill="#374151">$165,000</text>
+
+            <text x="-140" y="90" font-size="12" fill="#374151">Operational Budget</text>
+            <rect x="0" y="75" width="652" height="24" fill="#FDE68A" stroke="#F59E0B"/>
+            <text x="662" y="93" font-size="12" fill="#374151">$326,000</text>
+
+            <text x="-140" y="150" font-size="12" fill="#374151">5-Year ROI (3.5%)</text>
+            <rect x="0" y="135" width="470" height="24" fill="#FBCFE8" stroke="#DB2777"/>
+            <text x="480" y="153" font-size="12" fill="#374151">$937,440</text>
+          </g>
+        </svg>
+      </div>
+      <p class="text-sm text-gray-600 mt-3">Figures from deck: development $165k, operations $326k, 5-year ROI ~$937k.</p>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-2">Market Opportunity</h3>
+    <p class="mb-4">213,000+ U.S. physician offices represent a significant channel for scalable adoption across private practices and systems.</p>
+
+    <h3 class="text-xl font-semibold mb-2">Competitive Advantage</h3>
+    <ul class="list-disc pl-6 mb-4 space-y-1">
+      <li>AI-generated IEP and care recommendations</li>
+      <li>True interoperability across EHRs and SIS</li>
+      <li>Consent-controlled provider handoffs</li>
+      <li>Patent-pending architecture built for scale</li>
+      <li>Inclusive, mobile-first UX</li>
+    </ul>
+
+    <button class="bg-pink-600 text-white px-4 py-2 rounded mt-2">Contact Us to Invest</button>
+  </section>
+
+  <!-- Get Involved -->
+  <section id="getinvolved" class="page">
+    <h2 class="text-2xl font-bold mb-4">Get Involved</h2>
+    <p class="mb-4">
+      We invite you to be part of this movement. Whether you are a donor, investor, or community advocate, your involvement helps us build
+      the future of connected, compassionate care systems.
+    </p>
+    <ul class="list-disc pl-6 mb-4 space-y-1">
+      <li><strong>Donate:</strong> Empower families and providers by funding development and outreach.</li>
+      <li><strong>Invest:</strong> Join us in scaling AI-driven care technology and achieving long-term growth.</li>
+      <li><strong>Stay Connected:</strong> Subscribe to updates as we expand Oria and MyEMR into clinics, schools, and communities.</li>
+    </ul>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-100 text-center py-4 text-gray-600">
+  <p>Contact: hello@ignitecollectiveagency.com | (850) 460-0741</p>
+</footer>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
